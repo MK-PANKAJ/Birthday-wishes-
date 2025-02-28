@@ -1,0 +1,4 @@
+@keyframes fall {
+  0% { top: 0; opacity: 1; }
+  100% { top: 100vh; opacity: 0; }
+}
