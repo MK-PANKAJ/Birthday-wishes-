@@ -98,14 +98,22 @@
         // Confetti Effect
         document.body.addEventListener("click", function () {
             let confetti = document.createElement("div");
-            confetti.innerText = "🎉";
-            confetti.style.position = "absolute";
-            confetti.style.left = Math.random() * window.innerWidth + "px";
-            confetti.style.top = "0px";
-            confetti.style.fontSize = "2em";
-            confetti.style.animation = "fall 2s linear";
-            document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 2000);
+    confetti.innerText = "🎉";
+    confetti.style.position = "absolute";
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+    confetti.style.top = "0px";
+    confetti.style.fontSize = "2em";
+    confetti.style.animation = "fall 2s linear";
+    document.body.appendChild(confetti);
+    setTimeout(() => {
+      confetti.remove();
+      // Recursively call dropConfetti to create an infinite loop
+      dropConfetti();
+    }, 2000);
+  }
+  
+  // Start the infinite confetti loop
+  dropConfetti();
         });
 
         // Confetti falling animation
